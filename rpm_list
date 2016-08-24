@@ -1,0 +1,11 @@
+expat-devel
+gcc
+gcc-c++
+gd-devel
+git
+httpd-devel
+make
+mysql-community-devel
+openssl
+openssl-devel
+perl-core
