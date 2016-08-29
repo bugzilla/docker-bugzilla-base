@@ -26,12 +26,12 @@ RUN yum -y install https://dev.mysql.com/get/mysql-community-release-el7-5.noarc
 	yum -y install `cat /rpm_list.clean` && \
     yum clean all
 
-# Clone the code repo initially
-RUN git clone $GITHUB_BASE_GIT -b $GITHUB_BASE_BRANCH $BUGZILLA_WWW
+RUN pip install --upgrade pip rst2pdf sphinx
 
-# Install dependencies
-RUN cd $BUGZILLA_WWW && \
+# Clone the code repo and install dependencies
+RUN git clone $GITHUB_BASE_GIT -b $GITHUB_BASE_BRANCH $BUGZILLA_WWW && \
+    cd $BUGZILLA_WWW && \
 	cpanm -l $BUGZILLA_LIB --quiet --skip-satisfied --notest --installdeps \
           --with-all-features --without-feature oracle \
           --without-feature sqlite --without-feature pg . && \
-	rm -rf ~/.cpanm
+	rm -rf $BUGZILLA_WWW ~/.cpanm

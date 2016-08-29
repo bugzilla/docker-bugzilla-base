@@ -9,3 +9,5 @@ mysql-community-devel
 openssl
 openssl-devel
 perl-core
+python-devel
+python-pip
