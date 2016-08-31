@@ -9,5 +9,7 @@ mysql-community-devel
 openssl
 openssl-devel
 perl-core
+postgresql-devel
+postgresql-server
 python-devel
 python-pip

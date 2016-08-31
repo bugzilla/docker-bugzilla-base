@@ -32,6 +32,5 @@ RUN pip install --upgrade pip rst2pdf sphinx
 RUN git clone $GITHUB_BASE_GIT -b $GITHUB_BASE_BRANCH $BUGZILLA_WWW && \
     cd $BUGZILLA_WWW && \
 	cpanm -l $BUGZILLA_LIB --quiet --skip-satisfied --notest --installdeps \
-          --with-all-features --without-feature oracle \
-          --without-feature sqlite --without-feature pg . && \
+          --with-all-features --without-feature oracle . && \
 	rm -rf $BUGZILLA_WWW ~/.cpanm
