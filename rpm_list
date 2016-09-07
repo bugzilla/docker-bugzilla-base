@@ -5,6 +5,7 @@ gd-devel
 git
 httpd-devel
 make
+mod_perl
 mysql-community-devel
 openssl
 openssl-devel
